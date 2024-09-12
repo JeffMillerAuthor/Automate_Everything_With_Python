@@ -23,7 +23,7 @@ password = 'password'  # Replace with your SQL Server password
 pc_username = os.getlogin()
 
 # Path to the directory containing SQL files
-sql_directory = r"C:\\Users\\" + pc_username +  "\\Desktop\Automate Everything With Python\\SQL Code"
+sql_directory = r"C:\\Users\\" + pc_username + "\\Desktop\\Automate_Everything_With_Python\\SQL Code"
 
 # List of SQL file names to execute
 sql_files = [f for f in os.listdir(sql_directory) if (f.startswith("dbo") or f.startswith("CDC Covid19 Staff"))and f.endswith(".sql")]
