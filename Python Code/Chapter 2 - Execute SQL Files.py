@@ -15,10 +15,9 @@ import os
 # Define the connection details
 server = 'server name'  # Your SQL Server name
 database = 'Automate_Everything_With_Python'  # Database name where SQL files will be executed
-sql_username = 'user name'  # Replace with your SQL Server username
+sql_username = 'username'  # Replace with your SQL Server username
 password = 'password'  # Replace with your SQL Server password
-# sql_username = 'snoopy'  # Replace with your SQL Server username
-# password = 'cooldog1'  # Replace with your SQL Server password
+
 
 # Get the username
 pc_username = os.getlogin()
@@ -28,9 +27,6 @@ sql_directory = r"C:\\Users\\" + pc_username +  "\\Desktop\Automate Everything W
 
 # List of SQL file names to execute
 sql_files = [f for f in os.listdir(sql_directory) if (f.startswith("dbo") or f.startswith("CDC Covid19 Staff"))and f.endswith(".sql")]
-# sql_files = ['CDC Covid19 Staff Tables.sql','dbo.Hospital.Table.sql', 'dbo.DiagnosisDescriptions.Table.sql','dbo.PatientAssessments.Table.sql'] 
-# sql_files = ['dbo.PatientBiographics.Table.sql','dbo.PatientCovidLabTest.Table.sql','dbo.PatientDiagnosis.Table.sql','dbo.Payors.Table.sql','dbo.Providers.Table.sql'] 
-
 
 # Define the connection string
 connection_string = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database};UID={sql_username};PWD={password}'
