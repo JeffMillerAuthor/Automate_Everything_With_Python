@@ -13,10 +13,10 @@ import pyodbc
 import os
 
 # Define the connection details
-server = 'ECHO1\\SQLEXPRESS'  # Your SQL Server name
+server = 'server name'  # Your SQL Server name
 database = 'Automate_Everything_With_Python'  # Database name where SQL files will be executed
-sql_username = 'santa'  # Replace with your SQL Server username
-password = 'xmas1225'  # Replace with your SQL Server password
+sql_username = 'user name'  # Replace with your SQL Server username
+password = 'password'  # Replace with your SQL Server password
 # sql_username = 'snoopy'  # Replace with your SQL Server username
 # password = 'cooldog1'  # Replace with your SQL Server password
 
