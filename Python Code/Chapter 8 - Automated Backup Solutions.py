@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Aug 28 09:58:48 2024
-
-@author: Jeff Miller
-"""
 
 # =============================================================================
 # Chapter 8 - Automated Backup Solutions.py
