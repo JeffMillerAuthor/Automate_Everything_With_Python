@@ -21,7 +21,7 @@ df_patient_diag = pd.read_csv(data_directory + '\\' + 'Patient Diagnosis.csv',
 
 # Connect to SQL Server
 conn_str = ('Driver={ODBC Driver 17 for SQL Server};'
-            'Server=ECHO1\SQLEXPRESS;' # Enter your server name here
+            'Server=Enter_Your_Server_Name;' # Enter your server name here
             'Database=Automate_Everything_With_Python;'
             'UID=automation_user;'
             'PWD=AutomateEverything2024!;'
@@ -72,7 +72,7 @@ for c in df_patient_bio.columns:
 
 
 conn_str = ('Driver={ODBC Driver 17 for SQL Server};'
-            'Server=ECHO1\SQLEXPRESS;' # Enter your server name here
+            'Server=Enter_Your_Server_Name;' # Enter your server name here
             'Database=Automate_Everything_With_Python;'
             'UID=automation_user;'
             'PWD=AutomateEverything2024!;'
@@ -129,7 +129,7 @@ df_payor.columns = df_payor.iloc[0]
 df_payor = df_payor.drop(df_payor.index[0])
     
 conn_str = ('Driver={ODBC Driver 17 for SQL Server};'
-            'Server=ECHO1\SQLEXPRESS;' # Enter your server name here
+            'Server=Enter_Your_Server_Name;' # Enter your server name here
             'Database=Automate_Everything_With_Python;'
             'UID=automation_user;'
             'PWD=AutomateEverything2024!;'
@@ -172,7 +172,7 @@ df_hospital = pd.read_excel(data_directory + '\\' + 'Hospitals.xlsx',
                                         'Zip':str})[['ClinicID','ClinicName','City','State','Zip']]
 
 conn_str = ('Driver={ODBC Driver 17 for SQL Server};'
-            'Server=ECHO1\SQLEXPRESS;' # Enter your server name here
+            'Server=Enter_Your_Server_Name;' # Enter your server name here
             'Database=Automate_Everything_With_Python;'
             'UID=automation_user;'
             'PWD=AutomateEverything2024!;'
@@ -212,7 +212,7 @@ pc_username = os.getlogin()
 data_directory = r"C:\\Users\\" + pc_username +  "\\Desktop\Automate Everything With Python\\Data Files"
 
 conn_str = ('Driver={ODBC Driver 17 for SQL Server};'
-            'Server=ECHO1\SQLEXPRESS;' # Enter your server name here
+            'Server=Enter_Your_Server_Name;' # Enter your server name here
             'Database=Automate_Everything_With_Python;'
             'UID=automation_user;'
             'PWD=AutomateEverything2024!;'
