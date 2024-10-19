@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Sep  3 18:28:19 2024
-
-@author: Jeff Miller
-"""
-
 # =============================================================================
 # Chapter 10 - Creating Consilidated Text Backup of Python Script.py
 # =============================================================================
@@ -41,9 +34,5 @@ for f in all_py_files:
           py_content = py_file.read() 
           with open(backup_folder_path + '\\' + 'Python Log ' + current_date + '.txt','a') as txt_file: 
               txt_file.write(py_content)
-
-
-
-
 
 print('Catologing Python script is finished!!!')
