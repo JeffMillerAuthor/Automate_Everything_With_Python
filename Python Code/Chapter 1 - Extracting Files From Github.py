@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Aug 30 05:17:22 2024
-
-@author: Jeff Miller
-"""
 
 # =============================================================================
 # Chapter 1 - Extracting Files From Github.py
@@ -29,7 +23,6 @@ else:
     print(f"The folder '{destination_path}' already exists on your desktop.")
     
     
-
-    
+ 
     
     
