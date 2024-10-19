@@ -1,12 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Aug 28 08:07:40 2024
-
-@author: Jeff Miller
-"""
-
 # =============================================================================
-# Chapter 4 - Automating Python Workflows.py
+# Chapter 5 - Automating Python Workflows.py
 # =============================================================================
 
 import subprocess
