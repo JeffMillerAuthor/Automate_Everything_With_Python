@@ -1,10 +1,5 @@
 /****** Object:  Table [dbo].[CDC_Covid19_Staff]    Script Date: 1/31/2021 4:49:51 AM ******/
---USE [Automate_Everything_With_Python]
---SET ANSI_NULLS ON
---GO
 
---SET QUOTED_IDENTIFIER ON
---GO
 
 CREATE TABLE [Automate_Everything_With_Python].[dbo].[CDC_Covid19_Staff](
 	[OrgID] [nvarchar](50) NULL,
