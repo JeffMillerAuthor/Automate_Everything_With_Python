@@ -1,18 +1,13 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Aug 28 06:01:06 2024
-
-@author: Jeff Miller
-"""
 
 # =============================================================================
-# Chapter 5 - Loading Diverse Flat File Formats into SQL.py
+# Chapter 3 - Loading Diverse Flat File Formats into SQL.py
+#
+# Section 1: Load CSV file into SQL
 # =============================================================================
 
 import pandas as pd
 import pyodbc
-# pip install pandas pyodbc sqlalchemy
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine 
 import os
 
 # Get the username
@@ -26,9 +21,11 @@ df_patient_diag = pd.read_csv(data_directory + '\\' + 'Patient Diagnosis.csv',
 
 # Connect to SQL Server
 conn_str = ('Driver={ODBC Driver 17 for SQL Server};'
-            'Server=ECHO1\SQLEXPRESS;'
+            'Server=ECHO1\SQLEXPRESS;' # Enter your server name here
             'Database=Automate_Everything_With_Python;'
-            'Trusted_Connection=yes')
+            'UID=automation_user;'
+            'PWD=AutomateEverything2024!;'
+            'Trusted_Connection=no')
 
 # Create a connection and cursor
 conn = pyodbc.connect(conn_str)
@@ -47,7 +44,9 @@ df_patient_diag.to_sql(table_name, engine, if_exists='replace', index=False)
 
 
 # =============================================================================
-# Load TXT file into Data Frame
+# 
+# Section 2: Load TXT file into SQL
+# 
 # =============================================================================
 import pandas as pd
 import pyodbc
@@ -68,17 +67,15 @@ df_patient_bio.dtypes
 # Convert date object to datetime 
 df_patient_bio['BirthDate'] = pd.to_datetime(df_patient_bio['BirthDate'],format='%m/%d/%Y')
 
-
-
 for c in df_patient_bio.columns:
     print(c)
 
 
 conn_str = ('Driver={ODBC Driver 17 for SQL Server};'
-            'Server=ECHO1\SQLEXPRESS;'
+            'Server=ECHO1\SQLEXPRESS;' # Enter your server name here
             'Database=Automate_Everything_With_Python;'
-            'UID=santa;'
-            'PWD=xmas1225;'
+            'UID=automation_user;'
+            'PWD=AutomateEverything2024!;'
             'Trusted_Connection=no')
 
 conn = pyodbc.connect(conn_str)
@@ -103,7 +100,9 @@ conn.commit()
 conn.close()
 
 # =============================================================================
-# Load Dirty TXT file into Data Frame
+# 
+# Section 3: Load Dirty TXT file into SQL
+# 
 # =============================================================================
 import pandas as pd
 import pyodbc
@@ -128,13 +127,12 @@ df_payor.columns = df_payor.iloc[0]
     
 # Drop the first row as it's now the header
 df_payor = df_payor.drop(df_payor.index[0])
-
     
 conn_str = ('Driver={ODBC Driver 17 for SQL Server};'
-            'Server=ECHO1\SQLEXPRESS;'
+            'Server=ECHO1\SQLEXPRESS;' # Enter your server name here
             'Database=Automate_Everything_With_Python;'
-            'UID=santa;'
-            'PWD=xmas1225;'
+            'UID=automation_user;'
+            'PWD=AutomateEverything2024!;'
             'Trusted_Connection=no')
 
 conn = pyodbc.connect(conn_str)
@@ -153,7 +151,9 @@ conn.commit()
 conn.close()
 
 # =============================================================================
-# Load Excel file into Data Frame
+# 
+# Section 4: Load Excel file into SQL
+# 
 # =============================================================================
 import pandas as pd
 import pyodbc
@@ -172,10 +172,10 @@ df_hospital = pd.read_excel(data_directory + '\\' + 'Hospitals.xlsx',
                                         'Zip':str})[['ClinicID','ClinicName','City','State','Zip']]
 
 conn_str = ('Driver={ODBC Driver 17 for SQL Server};'
-            'Server=ECHO1\SQLEXPRESS;'
+            'Server=ECHO1\SQLEXPRESS;' # Enter your server name here
             'Database=Automate_Everything_With_Python;'
-            'UID=santa;'
-            'PWD=xmas1225;'
+            'UID=automation_user;'
+            'PWD=AutomateEverything2024!;'
             'Trusted_Connection=no')
 
 conn = pyodbc.connect(conn_str)
@@ -198,7 +198,9 @@ conn.close()
 
 
 # =============================================================================
-# Load Excel files into Data Frame from specific worksheet
+# 
+# Section 5: Load Excel files into SQL from specific worksheet
+# 
 # =============================================================================
 import pandas as pd
 import pyodbc
@@ -209,19 +211,15 @@ pc_username = os.getlogin()
 
 data_directory = r"C:\\Users\\" + pc_username +  "\\Desktop\Automate Everything With Python\\Data Files"
 
-
-
 conn_str = ('Driver={ODBC Driver 17 for SQL Server};'
-            'Server=ECHO1\SQLEXPRESS;'
+            'Server=ECHO1\SQLEXPRESS;' # Enter your server name here
             'Database=Automate_Everything_With_Python;'
-            'UID=santa;'
-            'PWD=xmas1225;'
+            'UID=automation_user;'
+            'PWD=AutomateEverything2024!;'
             'Trusted_Connection=no')
 
 conn = pyodbc.connect(conn_str)
 cursor = conn.cursor()
-
-
 
 df_providers = pd.read_excel(data_directory + '\\' + 'Raw Data.xlsx',
                           sheet_name='Providers',
@@ -240,7 +238,6 @@ for row in df_providers.itertuples():
                     row.ProviderName,
                     row.Phone)
     
-
 df_diagnosisdesc = pd.read_excel(data_directory + '\\' + 'Raw Data.xlsx',
                           sheet_name='Diagnosis Descriptions',
                           converters={'DiagCode':str})
@@ -261,3 +258,4 @@ conn.commit()
 
 # Close Connection
 conn.close()
+
