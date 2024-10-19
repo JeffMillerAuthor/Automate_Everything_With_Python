@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Aug 28 08:57:34 2024
-
-@author: Jeff Miller
-"""
 
 # =============================================================================
 # Chapter 7 - Automating Personalized Monthly Report Distribution.py
