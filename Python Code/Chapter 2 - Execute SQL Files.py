@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Aug 30 07:11:30 2024
-
-@author: Jeff Miller
-"""
-
 # # =============================================================================
 # # Chapter 2 - Execute SQL Files.py
 # # =============================================================================
@@ -13,11 +6,10 @@ import pyodbc
 import os
 
 # Define the connection details
-server = 'server name'  # Your SQL Server name
+server = 'ECHO1\\SQLEXPRESS'  # Your SQL Server name
 database = 'Automate_Everything_With_Python'  # Database name where SQL files will be executed
-sql_username = 'username'  # Replace with your SQL Server username
-password = 'password'  # Replace with your SQL Server password
-
+sql_username = 'automation_user'  # Replace with your SQL Server username
+password = 'AutomateEverything2024!'  # Replace with your SQL Server password
 
 # Get the username
 pc_username = os.getlogin()
@@ -26,7 +18,7 @@ pc_username = os.getlogin()
 sql_directory = r"C:\\Users\\" + pc_username + "\\Desktop\\Automate_Everything_With_Python\\SQL Code"
 
 # List of SQL file names to execute
-sql_files = [f for f in os.listdir(sql_directory) if (f.startswith("dbo") or f.startswith("CDC Covid19 Staff"))and f.endswith(".sql")]
+sql_files = [f for f in os.listdir(sql_directory) if (f.startswith("dbo") or f.startswith("CDC Covid19 Staff")) and f.endswith(".sql")]
 
 # Define the connection string
 connection_string = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database};UID={sql_username};PWD={password}'
@@ -52,3 +44,7 @@ def execute_sql_file(file_path):
 for sql_file in sql_files:
     sql_file_path = os.path.join(sql_directory, sql_file)
     execute_sql_file(sql_file_path)
+    
+    
+
+
