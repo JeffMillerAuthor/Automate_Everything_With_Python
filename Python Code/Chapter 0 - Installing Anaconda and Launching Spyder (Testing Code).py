@@ -1,3 +1,19 @@
+# Test what libraries are installed
+import pandas
+
+libraries = ["pandas", "pyodbc","sqlalchemy","openpyxl","dateutil","win32com"]
+             
+
+for lib in libraries:
+    try:
+        __import__(lib)
+        print(f"{lib} is installed")
+    except ImportError:
+        print(f"{lib} is NOT installed")
+
+
+
+
 # Importing Required Libraries
 import pandas as pd
 from datetime import datetime
