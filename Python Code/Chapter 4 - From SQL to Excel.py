@@ -11,7 +11,7 @@ from openpyxl.worksheet.table import Table, TableStyleInfo
 
 # Establish a connection to the SQL Server
 connection_string = ('Driver={ODBC Driver 17 for SQL Server};'
-                    'Server=ECHO1\SQLEXPRESS;'
+                    'Server=Enter_Your_Server_Name;' # Replace with your SQL Server name
                     'Database=Automate_Everything_With_Python;'
                     'UID=automation_user;'
                     'PWD=AutomateEverything2024!;'
