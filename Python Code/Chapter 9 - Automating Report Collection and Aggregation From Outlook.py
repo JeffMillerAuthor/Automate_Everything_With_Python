@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Aug 28 10:28:22 2024
-
-@author: Jeff Miller
-"""
-
 # =============================================================================
 # Chapter 9 - Automating Report Collection and Aggregation From Outlook.py
 # =============================================================================
@@ -15,7 +8,7 @@ import win32com.client as win32
 
 # Define the folder path for downloaded emails
 desktop_path = os.path.join(os.environ['USERPROFILE'], 'Desktop')
-downloaded_folder_path = os.path.join(desktop_path, 'Automate Everything With Python', 'Email Downloaded Folder')
+downloaded_folder_path = os.path.join(desktop_path, 'Automate_Everything_With_Python', 'Email Downloaded Folder')
 
 # Create the downloaded folder if it doesn't exist
 if not os.path.exists(downloaded_folder_path):
@@ -56,6 +49,10 @@ if dataframes:
     print(f"Combined DataFrame saved to: {combined_df_path}")
 else:
     print("No relevant emails with attachments found.")
+
+
+
+
 
 
 
