@@ -6,7 +6,7 @@ import pyodbc
 import os
 
 # Define the connection details
-server = 'ECHO1\\SQLEXPRESS'  # Your SQL Server name
+server = 'Enter_Your_Server_Name'  # Replace with your SQL Server name
 database = 'Automate_Everything_With_Python'  # Database name where SQL files will be executed
 sql_username = 'automation_user'  # Replace with your SQL Server username
 password = 'AutomateEverything2024!'  # Replace with your SQL Server password
