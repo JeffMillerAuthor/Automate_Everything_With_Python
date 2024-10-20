@@ -13,7 +13,7 @@ import os
 # Get the username
 pc_username = os.getlogin()
 
-data_directory = r"C:\\Users\\" + pc_username +  "\\Desktop\Automate Everything With Python\\Data Files"
+data_directory = r"C:\\Users\\" + pc_username +  "\\Desktop\Automate_Everything_With_Python\\Data Files"
 
 
 df_patient_diag = pd.read_csv(data_directory + '\\' + 'Patient Diagnosis.csv',
@@ -55,7 +55,7 @@ import os
 # Get the username
 pc_username = os.getlogin()
 
-data_directory = r"C:\\Users\\" + pc_username +  "\\Desktop\Automate Everything With Python\\Data Files"
+data_directory = r"C:\\Users\\" + pc_username +  "\\Desktop\Automate_Everything_With_Python\\Data Files"
 
 df_patient_bio = pd.read_csv(data_directory + '\\' + 'Patient Biographics.txt',
                              sep='\t',
@@ -106,8 +106,8 @@ import os
 # Get the username
 pc_username = os.getlogin()
 
-data_directory = r"C:\\Users\\" + pc_username +  "\\Desktop\Automate Everything With Python\\Data Files"
-                    
+data_directory = r"C:\\Users\\" + pc_username +  "\\Desktop\Automate_Everything_With_Python\\Data Files"
+                       
 df_payor = pd.read_csv(data_directory + '\\' + 'Payor.txt',
                           sep='\t',
                           skiprows=3,
@@ -154,9 +154,7 @@ import os
 # Get the username
 pc_username = os.getlogin()
 
-data_directory = r"C:\\Users\\" + pc_username +  "\\Desktop\Automate Everything With Python\\Data Files"
-
-df_hospital = pd.read_excel(data_directory + '\\' + 'Hospitals.xlsx')
+data_directory = r"C:\\Users\\" + pc_username +  "\\Desktop\Automate_Everything_With_Python\\Data Files"
 
 df_hospital = pd.read_excel(data_directory + '\\' + 'Hospitals.xlsx',
                              skiprows=2,
@@ -201,7 +199,7 @@ import os
 # Get the username
 pc_username = os.getlogin()
 
-data_directory = r"C:\\Users\\" + pc_username +  "\\Desktop\Automate Everything With Python\\Data Files"
+data_directory = r"C:\\Users\\" + pc_username +  "\\Desktop\Automate_Everything_With_Python\\Data Files"
 
 conn_str = ('Driver={ODBC Driver 17 for SQL Server};'
             'Server=Enter_Your_Server_Name;' # Enter your server name here
@@ -217,11 +215,6 @@ df_providers = pd.read_excel(data_directory + '\\' + 'Raw Data.xlsx',
                           sheet_name='Providers',
                           converters={'ProviderID':str})
 
-# Get the column names and join them with commas
-column_names_string = ','.join(df_providers.columns)
-
-print(column_names_string)
-
 # Insert DataFrame/csv file into SQL table
 for row in df_providers.itertuples():
     cursor.execute('''insert into Providers (ProviderID,ProviderName,Phone)
@@ -233,11 +226,6 @@ for row in df_providers.itertuples():
 df_diagnosisdesc = pd.read_excel(data_directory + '\\' + 'Raw Data.xlsx',
                           sheet_name='Diagnosis Descriptions',
                           converters={'DiagCode':str})
-
-# Get the column names and join them with commas
-column_names_string = ','.join(df_diagnosisdesc.columns)
-
-print(column_names_string)
 
 # Insert DataFrame/csv file into SQL table
 for row in df_diagnosisdesc.itertuples():
