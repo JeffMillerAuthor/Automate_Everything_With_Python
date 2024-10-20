@@ -65,10 +65,7 @@ df_patient_bio = pd.read_csv(data_directory + '\\' + 'Patient Biographics.txt',
 # Convert date object to datetime 
 df_patient_bio['BirthDate'] = pd.to_datetime(df_patient_bio['BirthDate'],format='%m/%d/%Y')
 
-for c in df_patient_bio.columns:
-    print(c)
-
-
+# Server Connection
 conn_str = ('Driver={ODBC Driver 17 for SQL Server};'
             'Server=Enter_Your_Server_Name;' # Enter your server name here
             'Database=Automate_Everything_With_Python;'
