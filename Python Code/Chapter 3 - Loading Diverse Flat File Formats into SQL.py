@@ -62,8 +62,6 @@ df_patient_bio = pd.read_csv(data_directory + '\\' + 'Patient Biographics.txt',
                              converters={'PatientID':str,
                                          'InsuranceID':str})
 
-df_patient_bio.dtypes
-
 # Convert date object to datetime 
 df_patient_bio['BirthDate'] = pd.to_datetime(df_patient_bio['BirthDate'],format='%m/%d/%Y')
 
