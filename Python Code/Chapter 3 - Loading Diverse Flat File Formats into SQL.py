@@ -107,10 +107,7 @@ import os
 pc_username = os.getlogin()
 
 data_directory = r"C:\\Users\\" + pc_username +  "\\Desktop\Automate Everything With Python\\Data Files"
-
-df_payor = pd.read_csv(data_directory + '\\' + 'Payor.txt',
-                          sep='\t')
-                          
+                    
 df_payor = pd.read_csv(data_directory + '\\' + 'Payor.txt',
                           sep='\t',
                           skiprows=3,
