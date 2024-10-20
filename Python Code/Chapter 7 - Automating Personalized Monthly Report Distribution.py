@@ -10,9 +10,9 @@ from datetime import datetime
 
 # Define paths
 desktop_path = os.path.join(os.environ['USERPROFILE'], 'Desktop')
-data_files_path = os.path.join(desktop_path, 'Automate Everything With Python', 'Data Files')
+data_files_path = os.path.join(desktop_path, 'Automate_Everything_With_Pythonn', 'Data Files')
 email_table_path = os.path.join(data_files_path, 'Email Table.xlsx')
-report_folder_path = os.path.join(desktop_path, 'Automate Everything With Python', 'Automated Reports')
+report_folder_path = os.path.join(desktop_path, 'Automate_Everything_With_Python', 'Automated Reports')
 
 # Load the "Email Table.xlsx" into a DataFrame
 df_email = pd.read_excel(email_table_path)
