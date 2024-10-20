@@ -50,7 +50,7 @@ df_last_three.reset_index(drop=True, inplace=True)
 
 # Define paths
 desktop_path = os.path.join(os.environ['USERPROFILE'], 'Desktop')
-report_folder_path = os.path.join(desktop_path, 'Automate Everything With Python', 'Automated Reports')
+report_folder_path = os.path.join(desktop_path, 'Automate_Everything_With_Python', 'Automated Reports')
 os.makedirs(report_folder_path, exist_ok=True)
 
 # Process each provider's data
