@@ -8,7 +8,7 @@ import os
 
 # Define paths
 desktop_path = os.path.join(os.environ['USERPROFILE'], 'Desktop')
-report_folder_path = os.path.join(desktop_path, 'Automate Everything With Python', 'Python Code')
+report_folder_path = os.path.join(desktop_path, 'Automate_Everything_With_Python', 'Python Code')
 
 # Name of the script to execute
 script_name = "Chapter 3 - Create Respective File for Report User.py"
