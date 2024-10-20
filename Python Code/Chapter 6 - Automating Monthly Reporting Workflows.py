@@ -9,7 +9,7 @@ import shutil
 
 # Define the base path for the report folders
 desktop_path = os.path.join(os.environ['USERPROFILE'], 'Desktop')
-report_folder_path = os.path.join(desktop_path, 'Automate Everything With Python', 'Automated Reports')
+report_folder_path = os.path.join(desktop_path, 'Automate_Everything_With_Python', 'Automated Reports')
 
 # Define the source path where the Excel files are located
 source_path = report_folder_path  # Assuming the Excel files are on the desktop
