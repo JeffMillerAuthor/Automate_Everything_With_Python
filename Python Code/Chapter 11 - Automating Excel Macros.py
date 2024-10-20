@@ -7,7 +7,7 @@ import win32com.client as win32
 
 # Define the path to the workbook
 desktop_path = os.path.join(os.environ['USERPROFILE'], 'Desktop')
-excel_models_path = os.path.join(desktop_path, 'Automate Everything With Python', 'Excel Models')
+excel_models_path = os.path.join(desktop_path, 'Automate_Everything_With_Python', 'Excel Models')
 workbook_path = os.path.join(excel_models_path, 'PCP Compensation Model.xlsm')
 
 # Initialize Excel application
