@@ -9,8 +9,8 @@ from datetime import datetime
 
 # Define paths
 desktop_path = os.path.join(os.environ['USERPROFILE'], 'Desktop')
-python_code_path = os.path.join(desktop_path, 'Automate Everything With Python', 'Python Code')
-backup_folder_path = os.path.join(desktop_path, 'Automate Everything With Python','Python Backup Files')
+python_code_path = os.path.join(desktop_path, 'Automate_Everything_With_Python', 'Python Code')
+backup_folder_path = os.path.join(desktop_path, 'Automate_Everything_With_Python','Python Backup Files')
 
 # Create the backup folder if it doesn't exist
 if not os.path.exists(backup_folder_path):
