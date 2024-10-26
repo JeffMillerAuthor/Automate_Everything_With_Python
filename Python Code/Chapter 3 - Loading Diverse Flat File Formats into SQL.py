@@ -211,10 +211,17 @@ conn_str = ('Driver={ODBC Driver 17 for SQL Server};'
 conn = pyodbc.connect(conn_str)
 cursor = conn.cursor()
 
-# Load excel file
+# Load Providers worksheet from excel file
 df_providers = pd.read_excel(data_directory + '\\' + 'Raw Data.xlsx',
                           sheet_name='Providers',
                           converters={'ProviderID':str})
+
+# Load Patient Assessments worksheet from excel file    
+df_patientassessments = pd.read_excel(data_directory + '\\' + 'Raw Data.xlsx',
+                          sheet_name='Patient Assessments',
+                          converters={'ProviderID':str,
+                                      'ClinicID':str,
+                                      'PatientID':str})
 
 # Insert DataFrame into SQL table
 for row in df_providers.itertuples():
@@ -224,57 +231,24 @@ for row in df_providers.itertuples():
                     row.ProviderName,
                     row.Phone)
 
-# Load excel file    
-df_diagnosisdesc = pd.read_excel(data_directory + '\\' + 'Raw Data.xlsx',
-                          sheet_name='Diagnosis Descriptions',
-                          converters={'DiagCode':str})
-
 # Insert DataFrame into SQL table
-for row in df_diagnosisdesc.itertuples():
-    cursor.execute('''insert into DiagnosisDescriptions (DiagCode,DiagDescription)
-                    values(?,?)''',
-                    row.DiagCode,
-                    row.DiagDescription)
-
-# Load excel file    
-df_diagnosisdesc = pd.read_excel(data_directory + '\\' + 'Raw Data.xlsx',
-                          sheet_name='Patient Assessments',
-                          converters={'ProviderID':str,
-                                      'ClinicID':str,
-                                      'PatientID':str})
-
-# Insert DataFrame into SQL table
-for row in df_diagnosisdesc.itertuples():
+for row in df_patientassessments.itertuples():
     cursor.execute('''insert into PatientAssessments (PostPeriod,DateEntered,ProviderID,ClinicID,
                    DateTimeAssessment,PatientID,PatientName,Temperature,Pulse_Oximeter,SOB,Cough,
                    Abdominal_Pain,Diarrhea_Or_Other_Gi_Upset,Nausea,Loss_Of_Taste,
                    Red_Shadowed_Eyes_Or_Pink_Eye,Tingling_Sensation_Of_Face_Or_Hands,Sore_Throat,
                    Chills_And_Or_Repeated_Shaking_With_Chills,Muscle_Pain,Loss_Of_Smell,Headache)
                     values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''',
-                    row.PostPeriod,
-                    row.DateEntered,
-                    row.ProviderID,
-                    row.ClinicID,
-                    row.DateTimeAssessment,
-                    row.PatientID,
-                    row.PatientName,
-                    row.Temperature,
-                    row.Pulse_Oximeter,
-                    row.SOB,
-                    row.Cough,
-                    row.Abdominal_Pain,
-                    row.Diarrhea_Or_Other_Gi_Upset,
-                    row.Nausea,
-                    row.Loss_Of_Taste,
-                    row.Red_Shadowed_Eyes_Or_Pink_Eye,
-                    row.Tingling_Sensation_Of_Face_Or_Hands,
-                    row.Sore_Throat,
-                    row.Chills_And_Or_Repeated_Shaking_With_Chills,
-                    row.Muscle_Pain,
-                    row.Loss_Of_Smell,
-                    row.Headache)
+                    row.PostPeriod,row.DateEntered,row.ProviderID,row.ClinicID,row.DateTimeAssessment,
+                    row.PatientID,row.PatientName,row.Temperature,row.Pulse_Oximeter,row.SOB,row.Cough,
+                    row.Abdominal_Pain,row.Diarrhea_Or_Other_Gi_Upset,row.Nausea,row.Loss_Of_Taste,
+                    row.Red_Shadowed_Eyes_Or_Pink_Eye,row.Tingling_Sensation_Of_Face_Or_Hands,
+                    row.Sore_Throat,row.Chills_And_Or_Repeated_Shaking_With_Chills,
+                    row.Muscle_Pain,row.Loss_Of_Smell,row.Headache)
     
 conn.commit()
 
 # Close Connection
 conn.close()
+
+
