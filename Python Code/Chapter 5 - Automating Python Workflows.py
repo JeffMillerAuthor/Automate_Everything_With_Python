@@ -11,7 +11,7 @@ desktop_path = os.path.join(os.environ['USERPROFILE'], 'Desktop')
 report_folder_path = os.path.join(desktop_path, 'Automate_Everything_With_Python', 'Python Code')
 
 # Name of the script to execute
-script_name = "Chapter 3 - Create Respective File for Report User.py"
+script_name = "Chapter 4 - From SQL to Excel.py"
 script_to_execute = os.path.join(report_folder_path, script_name)
 
 try:
